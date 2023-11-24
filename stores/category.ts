@@ -5,6 +5,26 @@ export const useCategoryStore = defineStore("category", {
         message: "",
     }),
     actions: {
+        async createCategory(payload: any) {
+            const { baseUrl, apikey } = useAppConfig();
+            const { data, error } = await useFetch("/rest/v1/catefories", {
+                baseURL: baseUrl,
+                method: "POST",
+                headers: {
+                    apikey: apikey,
+                },
+                body: payload,
+            })
+
+            if (error.value) {
+                this.status = false;
+                this.message = "Get Category Failed !!!";
+            } else if (data) {
+                this.status = true;
+                this.message = "Get Category successfully";
+            }
+        },
+
         async getAllCategory() {
             const { baseUrl, apikey } = useAppConfig();
             const { data, error } = await useFetch("/rest/v1/categories", {
