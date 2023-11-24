@@ -12,6 +12,7 @@ export const useProductsStore = defineStore("products", {
                 method: "POST",
                 headers: {
                     apikey: apikey,
+                    Prefer: "return=minimal",
                 },
                 body: payload,
             })
@@ -19,6 +20,7 @@ export const useProductsStore = defineStore("products", {
             if (error.value) {
                 this.status = false;
                 this.message = "Get Products Failed !!!";
+                console.log(error.value)
             } else if (data) {
                 this.status = true;
                 this.message = "Get Products successfully";
@@ -44,7 +46,6 @@ export const useProductsStore = defineStore("products", {
                 this.products = data.value;
             }
         },
+
     }
-
-
 })

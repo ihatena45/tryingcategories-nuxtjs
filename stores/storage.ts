@@ -28,5 +28,3 @@ export const useStorageStore = defineStore("storage", {
         },
     }
 })
-
-export default useStorageStore

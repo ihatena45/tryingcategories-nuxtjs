@@ -3,6 +3,7 @@ import { useCategoryStore } from '~/stores/category';
 import { useStorageStore } from "~/stores/storage";
 import { useProductsStore } from '~/stores/product';
 import type { FormField } from '~/types/Product';
+import type { Category } from '~/types/Category';
 
 const categoryStore = useCategoryStore();
 const storageStore = useStorageStore();
