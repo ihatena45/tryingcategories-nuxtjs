@@ -12,7 +12,6 @@ export const useProductsStore = defineStore("products", {
                 method: "POST",
                 headers: {
                     apikey: apikey,
-                    Prefer: "return=minimal",
                 },
                 body: payload,
             })

@@ -26,3 +26,4 @@ export const useCategoryStore = defineStore("category", {
         },
     }
 })
+export default useCategoryStore
